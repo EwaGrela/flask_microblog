@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="container">
+		<h1 class="page-header">List of all posts</h1>
+		<div class="row">
+			<div class="col-8-md">
+				{% if posts %}
+				<ul>
+				{% for post in posts %}
+					<li>
+						{% include '_post.html' %}
+					</li>
+				{% endfor %}
+				</ul>
+	{% endif %}
+			</div>
+		</div>
+	</div>
+	
+{% endblock %}
