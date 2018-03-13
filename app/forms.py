@@ -35,5 +35,5 @@ class EditProfileForm(FlaskForm):
 
 class PostForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
-    body =TextAreaField('Body', validators=[Length(min=0)])
+    body =TextAreaField('Content', validators=[Length(min=0)])
     submit = SubmitField('Post')

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+		<section class="container">
+				<div class="centerstage">
+					<a class="centerstage" href="{{url_for('user', username=user.username)}}">
+					<img src="{{ user.avatar(128)}}" alt="profile">
+					<h1> Hi, I am {{user.username}}</h1>
+					<p> Click my avatar to check my profile</p>
+					</a>
+				</div>
+				<div class="centerstage">
+					{% for post in posts %}
+						{% include '_user_post.html'%}
+					{% endfor %}
+				</div>
+		</section>
+{% endblock %}

@@ -1,13 +1,10 @@
-<!-- <table>
-    <tr valign="top">
-        <td><img src="{{ post.author.avatar(36) }}"></td>
-        <td>{{ post.author.username }} says:<br>{{ post.body }}</td>
-    </tr>
-</table> -->
-<h2>{{post.title}}</h2>
-<article>{{post.body}}
-	<div>
+
+<h2 class="post-title">{{post.title}}</h2>
+<article class="post-body">{{post.body}}
+	<div class="post">
 	<span>by {{post.author.username}}</span>
-	<img src="{{post.author.avatar(32)}}" alt="avatar">
+	<a href="{{ url_for('user', username=post.author.username)}}">
+		<img src="{{post.author.avatar(32)}}" alt="avatar">
+	</a>
 	</div>
 </article>

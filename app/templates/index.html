@@ -6,11 +6,11 @@
 		</div>
 		<div class="row centerstage">
 			<div class="col-8-md centerstage">
-				<h2> Hello {{current_user.username}}</h2>
+				<h2> Oh, hai {{current_user.username}}!</h2>
 				<img src="{{current_user.avatar(128)}}" alt="avatar">
 				<a class="btn btn-default btn-lg" href="{{url_for('new_post')}}"> 
+						Add a new post
 						<span class="glyphicon glyphicon-pencil">
-					Add a new post
 						</span>
 				</a>					
 			</div>

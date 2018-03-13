@@ -55,12 +55,8 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    # posts = [
-    #     {'author': user, 'body': 'Test post number 1'},
-    #     {'author': user, 'body': 'Test post  number 2'}
-    # ]
-    posts = Post.query.filter_by(user_id=user.id)
-    return render_template('user.html', user=user, posts = posts)
+    # posts = Post.query.filter_by(user_id=user.id)
+    return render_template('user.html', user=user)
 
 
 
@@ -108,3 +104,10 @@ def new_post():
 def post_list():
     posts = Post.query.all()
     return render_template('post_list.html', posts=posts)
+
+
+@app.route("/users_posts/<username>")
+def users_posts(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    posts = Post.query.filter_by(user_id=user.id)
+    return render_template("users_posts.html", user=user, posts=posts)
